@@ -1,9 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_getx_boilerplate/app/core/color_theme.dart';
-import 'package:firebase_getx_boilerplate/app/core/text_theme.dart';
-import 'package:firebase_getx_boilerplate/app/widgets/modal.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class ModelStreamWidget extends StatelessWidget {
   const ModelStreamWidget({Key? key, required this.doc, required this.type})
