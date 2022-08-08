@@ -80,12 +80,12 @@ class _StorePageState extends State<StorePage>
   Widget cardWiget(String asset, String title, String content, String price) {
     return InkWell(
       onTap: () {
-        Get.to(DetailProductPage(
-          imgUrl: asset,
-          title: title,
-          content: content,
-          price: price,
-        ));
+        Get.to(() => DetailProductPage(
+              imgUrl: asset,
+              title: title,
+              content: content,
+              price: price,
+            ));
       },
       child: Card(
         child: Center(
