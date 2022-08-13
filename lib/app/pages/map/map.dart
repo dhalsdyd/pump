@@ -153,29 +153,13 @@ class MapSampleState extends State<MapSample> {
                           ],
                         ),
                         const SizedBox(height: 16),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: FGBPTextButton(
-                                radius: 12,
-                                text: "지도 닫기",
-                                onTap: () {
-                                  Get.back();
-                                },
-                              ),
-                            ),
-                            const SizedBox(width: 24),
-                            Expanded(
-                              child: FGBPTextButton(
-                                radius: 12,
-                                text: "바코드 인증",
-                                onTap: () {
-                                  Get.toNamed(Routes.barcodeScan);
-                                },
-                              ),
-                            ),
-                          ],
-                        ),
+                        FGBPTextWithIconButton(
+                          text: "바코드 인증",
+                          iconData: Icons.crop_free_outlined,
+                          onTap: () {
+                            Get.toNamed(Routes.barcodeScan);
+                          },
+                        )
                       ]),
                 ),
               ),
