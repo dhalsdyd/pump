@@ -21,12 +21,12 @@ class PaymentPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  LottieBuilder.asset("assets/json/loading_payment.json"),
+                  LottieBuilder.asset("assets/json/payment.json"),
                   const SizedBox(height: 18),
                   const Text.rich(TextSpan(children: [
                     TextSpan(
                         text: "3,000원", style: AppTextTheme.extraBoldTitle),
-                    TextSpan(text: "결제", style: AppTextTheme.boldMain),
+                    TextSpan(text: " 결제", style: AppTextTheme.boldMain),
                   ])),
                   const Text(
                     "결제 과정이 추가될 예정입니다.",
