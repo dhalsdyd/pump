@@ -1,12 +1,15 @@
 import 'package:firebase_getx_boilerplate/app/core/color_theme.dart';
 import 'package:firebase_getx_boilerplate/app/core/text_theme.dart';
+import 'package:firebase_getx_boilerplate/app/pages/home/controller.dart';
 import 'package:firebase_getx_boilerplate/app/routes/route.dart';
 import 'package:firebase_getx_boilerplate/app/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HistoryPage extends StatelessWidget {
-  const HistoryPage({Key? key}) : super(key: key);
+  HistoryPage({Key? key}) : super(key: key);
+
+  final HomePageController controller = Get.find<HomePageController>();
 
   Widget success() {
     return Card(
@@ -111,6 +114,7 @@ class HistoryPage extends StatelessWidget {
               color: AppColorTheme.mainColor,
               radius: 12,
               onTap: () {
+                controller.addCount();
                 Get.offNamed(Routes.root);
               },
             )
