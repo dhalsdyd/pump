@@ -1,3 +1,4 @@
+import 'package:firebase_getx_boilerplate/app/pages/barcode/binding.dart';
 import 'package:firebase_getx_boilerplate/app/pages/barcode/page.dart';
 import 'package:firebase_getx_boilerplate/app/pages/check/page.dart';
 import 'package:firebase_getx_boilerplate/app/pages/home/binding.dart';
@@ -14,30 +15,26 @@ import 'package:get/get.dart';
 class AppPages {
   static final pages = [
     GetPage(
-        name: Routes.home,
-        page: () => const HomePage(),
-        binding: HomePageBinding()),
+        name: Routes.home, page: () => HomePage(), binding: HomePageBinding()),
     GetPage(
-      name: Routes.barcodeScan,
-      page: () => const BarcodeScanPage(),
-    ),
+        name: Routes.barcodeScan,
+        page: () => BarcodeScanPage(),
+        binding: BarcodeScanPageBinding()),
     GetPage(
-      name: Routes.nfc,
-      page: () => const NfcLoadingPage(),
-      binding: NfcLoadingPageBinding()
-    
-    ),
+        name: Routes.nfc,
+        page: () => NfcLoadingPage(),
+        binding: NfcLoadingPageBinding()),
     GetPage(
       name: Routes.login,
       page: () => const LoginPage(),
     ),
     GetPage(
-      name: Routes.root,
-      page: () => const RootPage(),
-    ),
+        name: Routes.root,
+        page: () => const RootPage(),
+        binding: HomePageBinding()),
     GetPage(
       name: Routes.history,
-      page: () => const HistoryPage(),
+      page: () => HistoryPage(),
     ),
     GetPage(
       name: Routes.map,

@@ -1,11 +1,15 @@
-import 'package:firebase_getx_boilerplate/app/core/color_theme.dart';
 import 'package:firebase_getx_boilerplate/app/core/text_theme.dart';
+import 'package:firebase_getx_boilerplate/app/pages/home/controller.dart';
 import 'package:firebase_getx_boilerplate/app/routes/route.dart';
+import 'package:firebase_getx_boilerplate/app/widgets/button.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_getx_boilerplate/extension/number_extension.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
+
+  final HomePageController controller = Get.find<HomePageController>();
 
   Widget header() {
     return Row(
@@ -30,19 +34,23 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text("주자훈님,", style: AppTextTheme.bold),
-            const Text.rich(TextSpan(children: [
-              TextSpan(text: "6번", style: AppTextTheme.regularBlack),
-              TextSpan(text: "을 지구를 위해 펌프했어요", style: AppTextTheme.medium),
-            ])),
+            Obx(() => Text.rich(TextSpan(children: [
+                  TextSpan(
+                      text: "${controller.count.value.numberFormat()}번",
+                      style: AppTextTheme.regularBlack),
+                  const TextSpan(
+                      text: "을 지구를 위해 펌프했어요", style: AppTextTheme.medium),
+                ]))),
             const SizedBox(height: 18),
             Row(
               children: [
                 Image.asset("assets/images/tree.png"),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text("내가 세운 나무", style: AppTextTheme.boldSmallGrey),
-                    Text("8그루", style: AppTextTheme.boldMain),
+                  children: [
+                    const Text("내가 세운 나무", style: AppTextTheme.boldSmallGrey),
+                    Obx(() => Text("${controller.tree.value.numberFormat()}그루",
+                        style: AppTextTheme.boldMain)),
                   ],
                 )
               ],
@@ -55,9 +63,11 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Column(
-                    children: const [
-                      Text("3,000P", style: AppTextTheme.boldMain18),
-                      Text("보유 포인트", style: AppTextTheme.mediumSmallGrey),
+                    children: [
+                      Obx(() => Text(
+                          "${controller.point.value.numberFormat()}P",
+                          style: AppTextTheme.boldMain18)),
+                      const Text("보유 포인트", style: AppTextTheme.mediumSmallGrey),
                     ],
                   ),
                   const VerticalDivider(thickness: 2),
@@ -75,38 +85,13 @@ class HomePage extends StatelessWidget {
   }
 
   Widget subBanner() {
-    return Card(
-      color: AppColorTheme.mainColor,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      child: IntrinsicHeight(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              InkWell(
-                onTap: () {
-                  Get.toNamed(Routes.map);
-                },
-                child: Row(
-                  children: const [
-                    Icon(
-                      Icons.location_on_outlined,
-                      color: AppColorTheme.white,
-                    ),
-                    SizedBox(width: 10),
-                    Text("스테이션 찾기", style: AppTextTheme.boldWhite14),
-                  ],
-                ),
-              ),
-              // const VerticalDivider(
-              //   thickness: 2,
-              //   color: AppColorTheme.white,
-              // ),
-            ],
-          ),
-        ),
-      ),
+    return FGBPTextWithIconButton(
+      radius: 10,
+      text: "스테이션 찾기",
+      iconData: Icons.location_on_outlined,
+      onTap: () {
+        Get.toNamed(Routes.map);
+      },
     );
   }
 
@@ -117,11 +102,10 @@ class HomePage extends StatelessWidget {
         const Text("주자훈님!", style: AppTextTheme.bold),
         const Text("최근에 올라온 친환경 이야기를 확인해보세요", style: AppTextTheme.medium16),
         const SizedBox(height: 16),
-        Column(
+        Row(
           children: [
-            Image.asset("assets/images/eco.png"),
-            const SizedBox(height: 16),
-            Image.asset("assets/images/eco.png"),
+            Expanded(child: Image.asset("assets/images/sns1.png")),
+            Expanded(child: Image.asset("assets/images/sns2.png")),
           ],
         )
       ],

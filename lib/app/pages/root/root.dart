@@ -58,7 +58,7 @@ class _RootPageState extends State<RootPage> {
 }
 
 List<Widget> widgetOptions = [
-  const HomePage(),
+  HomePage(),
   const StorePage(),
   const StorePage(),
 ];
