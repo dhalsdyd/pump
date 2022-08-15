@@ -3,15 +3,20 @@ import 'package:flutter/material.dart';
 
 class FGBPDialog extends StatelessWidget {
   const FGBPDialog(
-      {Key? key, required this.child, this.borderColor = AppColorTheme.white})
+      {Key? key,
+      required this.child,
+      this.borderColor = AppColorTheme.white,
+      this.alignment})
       : super(key: key);
 
   final Widget child;
   final Color borderColor;
+  final AlignmentGeometry? alignment;
 
   @override
   Widget build(BuildContext context) {
     return Dialog(
+      alignment: alignment,
       elevation: 2,
       backgroundColor: Colors.transparent,
       child: Container(
@@ -61,4 +66,3 @@ class CustomFGBPDialog extends StatelessWidget {
     );
   }
 }
-

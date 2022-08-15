@@ -41,6 +41,55 @@ class FGBPButton extends StatelessWidget {
   }
 }
 
+class FGBPTextWithIconButton extends StatelessWidget {
+  const FGBPTextWithIconButton({
+    Key? key,
+    required this.text,
+    required this.iconData,
+    this.height,
+    this.color = AppColorTheme.mainColor,
+    this.radius,
+    this.onTap,
+  }) : super(key: key);
+
+  final String text;
+  final IconData iconData;
+  final double? height;
+  final Color? color;
+  final double? radius;
+  final Function()? onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    const textColor = AppTextTheme.mediumWhite;
+    return FGBPButton(
+      height: height,
+      onTap: onTap,
+      color: color,
+      radius: radius,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                iconData,
+                color: AppColorTheme.white,
+              ),
+              const SizedBox(width: 10),
+              Text(
+                text,
+                style: textColor,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class FGBPTextButton extends StatelessWidget {
   const FGBPTextButton({
     Key? key,
