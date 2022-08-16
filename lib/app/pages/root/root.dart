@@ -1,6 +1,7 @@
 import 'package:firebase_getx_boilerplate/app/core/color_theme.dart';
 import 'package:firebase_getx_boilerplate/app/core/text_theme.dart';
 import 'package:firebase_getx_boilerplate/app/pages/home/page.dart';
+import 'package:firebase_getx_boilerplate/app/pages/profile/page.dart';
 import 'package:firebase_getx_boilerplate/app/pages/store/page.dart';
 import 'package:flutter/material.dart';
 
@@ -60,5 +61,5 @@ class _RootPageState extends State<RootPage> {
 List<Widget> widgetOptions = [
   HomePage(),
   const StorePage(),
-  const StorePage(),
+  const ProfilePage()
 ];
