@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:ffi';
 
 import 'package:firebase_getx_boilerplate/app/core/color_theme.dart';
 import 'package:firebase_getx_boilerplate/app/core/text_theme.dart';

@@ -1,7 +1,6 @@
 import 'package:firebase_getx_boilerplate/app/core/color_theme.dart';
 import 'package:firebase_getx_boilerplate/app/core/text_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
