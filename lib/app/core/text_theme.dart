@@ -12,6 +12,21 @@ abstract class AppTextTheme {
       fontWeight: FontWeight.w700,
       fontSize: 20,
       color: AppColorTheme.black);
+  static const bold18 = TextStyle(
+      fontFamily: "Pretendard",
+      fontWeight: FontWeight.w700,
+      fontSize: 18,
+      color: AppColorTheme.black);
+  static const boldWhite18 = TextStyle(
+      fontFamily: "Pretendard",
+      fontWeight: FontWeight.w700,
+      fontSize: 18,
+      color: AppColorTheme.white);
+  static const boldWhite14 = TextStyle(
+      fontFamily: "Pretendard",
+      fontWeight: FontWeight.w700,
+      fontSize: 14,
+      color: AppColorTheme.white);
   static const boldMain = TextStyle(
       fontFamily: "Pretendard",
       fontWeight: FontWeight.w700,
@@ -27,11 +42,7 @@ abstract class AppTextTheme {
       fontWeight: FontWeight.w700,
       fontSize: 18,
       color: AppColorTheme.grey);
-  static const boldWhite14 = TextStyle(
-      fontFamily: "Pretendard",
-      fontWeight: FontWeight.w700,
-      fontSize: 14,
-      color: AppColorTheme.white);
+
   static const boldSmallGrey = TextStyle(
       fontFamily: "Pretendard",
       fontWeight: FontWeight.w700,
